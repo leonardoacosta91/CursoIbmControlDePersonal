@@ -5,6 +5,7 @@ https://github.com/leonardoacosta91/CursoIbmControlDePersonal.git
 
 # Conformación del equipo ya definida. 
 Equipo:
+
   ● Nicolás Quagliata
   
   ● Leonardo Acosta
