@@ -23,7 +23,7 @@ Existen diferentes tipos de control horario, biométrico, tarjetas inteligentes,
 Muchas empresas que cuentan con espacios compartidos como ser: sala de reuniones, anfiteatros, biblioteca, cafeterías, comedores, terrazas, espacios al aire libre se les dificulta contar con un control real y efectivo sobre lamovilidad interna de sus empleados.
 
 
-# ● Descripción de la solución inicial planteada.
+# Descripción de la solución inicial planteada.
 Se plantea realizar un sistema que permita controlar los horarios sin necesidad de esfuerzo por parte de los empleados a través del reconocimiento facial para el ingreso y egreso del personal. Además se colocarán cámaras con reconocimiento facial en las distintas áreas de la empresa para generar un “mapa de calor” de los empleados, pudiendo reconocer el tiempo efectivamente trabajado, tiempo utilizado en reuniones y tiempos “muertos”. 
 A partir de esta información el sistema generará:
 
