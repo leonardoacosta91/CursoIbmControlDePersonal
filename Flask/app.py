@@ -55,26 +55,28 @@ def predict():
             images_predict.append(image)
             images_predict = np.asarray(images_predict)
             
-
             # classify the input image and then initialize the list
             # of predictions to return to the client
             with graph.as_default():
                 preds = model.predict(images_predict)
                 print(preds)
-                #results = imagenet_utils.decode_predictions(preds)
-                data["predictions"] = []
+                #data["predictions"] = []
+                data["images"] = [{ "classifiers": [ { "classes" : [] } ]}]
+
 
                 # loop over the results and add them to the list of
                 # returned predictions
                 for i in range(len(preds[0])):
-                    r = {"type": class_names[i], "probability": float(preds[0][i])}
-                    data["predictions"].append(r)
+                    #r = {"type": class_names[i], "probability": float(preds[0][i])}
+                    #data["predictions"].append(r)
+                    r = {"class": class_names[i], "score": float(preds[0][i])}
+                    data["images"][0]["classifiers"][0]["classes"].append(r)
+
 
                 # indicate that the request was a success
                 data["success"] = True
 
     # return the data dictionary as a JSON response
-    #return flask.jsonify(data)
     response = flask.jsonify(data)
     print(response)
     response.headers.add('Access-Control-Allow-Origin', '*')
