@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+        <h1 id="title"></h1>
+        <h2 id="subtitle"></h2>
+
+        <div id="menu"></div>
+
+        <h1>Reconocimiento de Imagenes (salida)</h1>
+        <br />
+        <input type="file" name="imagen" id="inputImage" />
+        <input type="hidden" id="sourceField" name="sourceField" value="exitCam">
+        <button onclick="requestName()">Reconocer Imagen</button>
+        <br />
+        <div id="response"></div>
+
+    </div>
+
+    <script src="/js/upload.js"></script>
+
+    <script src=https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js> </script> <script>
+      window.loadWatsonAssistantChat({
+          //integrationID: "ac58c247-1eba-42ad-b9c2-33ee309ea630",
+          integrationID: "ceba1439-b6da-4975-b962-1dc5d53a435d",
+          region: "us-south"
+      }).then(function (instance) {
+          instance.render();
+      });
+  </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

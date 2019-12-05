@@ -1,0 +1,50 @@
+{
+  "name": "nq-aisenpai",
+  "version": "1.0.0",
+  "description": "proyecto de para la entrega final",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "webpack": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicoquagliata/nq-aisenpai.git"
+  },
+  "keywords": [],
+  "author": "nicoquagliata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicoquagliata/nq-aisenpai/issues"
+  },
+  "homepage": "https://github.com/nicoquagliata/nq-aisenpai#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.5",
+    "css-loader": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "ibm-cloud-env": "^0.2.6",
+    "ibm-watson": "^5.2.0",
+    "mongoose": "^5.7.12",
+    "morgan": "^1.9.1",
+    "nocache": "^2.1.0",
+    "nodemon": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>smartIA</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">    
+</head>
+<body>
+    <div class=".col-md-">
+        <div id="head"></div>
+
+        <script src=https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js> </script> <script>
+            window.loadWatsonAssistantChat({
+                //integrationID: "ac58c247-1eba-42ad-b9c2-33ee309ea630",
+                integrationID: "ceba1439-b6da-4975-b962-1dc5d53a435d",
+                region: "us-south"
+            }).then(function (instance) {
+                instance.render();
+            });
+        </script>
+        
+        <div id="app"></div>
+    </div>
+    <script src="/js/bundle.js"></script>
+</body>
+</html>
