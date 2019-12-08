@@ -91,3 +91,18 @@ A continuación se propone una metodología ágil, basada en 2 sprints de 2 sema
 - Evaluacion del proceso
 - Puesta en produccion
 - Opciones de mejora
+
+# Paso a paso para poner en funcionamiento la aplicacion
+
+Prerequisitos: 
+            - Node.js
+            - Python 3.7
+            - Virtualenv
+
+- clonar este mismo repositorio con "git clone https://github.com/leonardoacosta91/CursoIbmControlDePersonal.git"
+- Entrar a la carpeta Node server y ejecutar en el terminal "npm install" el cual instalara todas las dependencias para ejecutar           correctamente el servidor
+- Iniciar la aplicacion con "npm run dev" la misma correra en el puerto por defecto 3000 por lo que la ruta para acceder es               "localhost:3000"
+- Ahora para poner en funcionamiento el servidor Flask es necesario ingresar a la carpeta Flask y ejecutar en el terminar "virtualenv     env"
+- Ingresar al ambiente virtual con "env\Scripts\activate"
+- Ingresar el comando "pip install -r requirements.txt" el cual instalara las dependencias necesarias para ejecutar el servidor Flask
+- Para iniciar el servidor basta con ejecutar en el virtualenv "python run.app"
