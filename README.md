@@ -56,10 +56,11 @@ A partir de esta información el sistema generará:
 
 # Descripcion del modelo de Machine/Deep Learning a utilizar
 La arquitectura del modelo seran Redes Neuronales Convolucionales debido a que son las que mejor se adaptan al problema de identificacion de usuarios.
-Es posible que la solucion sea modelada utilizando los servicios de Watson Visual Recognition ya que es una solucion del ecosistema que utilizaremos y que ademas cuenta con facilidades a la hora de entrenar y evaluar la aplicacion
 
-Como segunda opcion se encuentra disponible realizarlo mediante Python y keras
+![cnn](https://user-images.githubusercontent.com/30410928/70396220-a4b8c880-19e5-11ea-861e-c11ab11b22cf.png)
 
+Para encontrar la solucion mas optima, se probo el rendimiento tanto del modelo de Watson Visual Recognition como el de un modelo entrenado en Keras y este ultimo logro un rendimiento superior utilizando el dataset creado.
+Para poner en funcionamiento esto se utilizó un servidor de Flask el cual cargara el modelo para realizar las predicciones
 
 # Descripción de la organización del equipo con respecto a la metodología IBM Garage 
 (Herramientas a utilizar, definición de roles, ciclos de desarrollo, servicios en la nube a utilizar, procesos de iteración a realizar).
