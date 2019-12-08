@@ -44,14 +44,14 @@ def predict():
     # ensure an image was properly uploaded to our endpoint
     if flask.request.method == "POST":
         if flask.request.files.get("imagen"):
-            class_names = ['Adam Sandler', 'Adele', 'Ashton Kutcher', 'Bella Thorne']
+            class_names = ['Leonardo', 'Nicolas', 'Ricardo']
             images_predict = []
             # read the image in PIL format
             image = flask.request.files["imagen"].read()
             image = Image.open(io.BytesIO(image))
 
             # preprocess the image and prepare it for classification
-            image = prepare_image(image, target=(100, 100))
+            image = prepare_image(image, target=(224, 224))
             images_predict.append(image)
             images_predict = np.asarray(images_predict)
             

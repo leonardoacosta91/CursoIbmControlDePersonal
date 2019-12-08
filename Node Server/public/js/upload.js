@@ -15,7 +15,7 @@ const menuItems = {
     ]
 };
 
-const workers = ['Ashton Kutcher', 'Adam Sandler', 'Adele', 'bella thorne'];
+const workers = ['Leonardo', 'Nicolas', 'Ricardo'];
 
 
 // check remote api
