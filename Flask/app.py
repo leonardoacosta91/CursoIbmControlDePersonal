@@ -18,7 +18,7 @@ def load_model_from_file():
     # load the  Keras model
     global model
     #model = load_model('models/famosos_cnn.h5')
-    model = load_model('models/modelo_accuracy_7420814441879411.h5')
+    model = load_model('models/model.h5')
     # save the graph after loading the model
     global graph
     graph = tf.get_default_graph()
