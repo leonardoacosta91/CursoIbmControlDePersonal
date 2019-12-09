@@ -190,7 +190,7 @@ Prerequisitos:
 - Ahora para poner en funcionamiento el servidor Flask es necesario ingresar a la carpeta Flask y ejecutar en el terminar "virtualenv     env"
 - Ingresar al ambiente virtual con "env\Scripts\activate"
 - Ingresar el comando "pip install -r requirements.txt" el cual instalara las dependencias necesarias para ejecutar el servidor Flask
-- Para iniciar el servidor basta con ejecutar en el virtualenv "python run.app"
+- Para iniciar el servidor basta con ejecutar en el virtualenv "python app.py"
 
 # ibm visual recognition vs tensorflow
 esta aplicacion puede correr contra el modelo en tf o contra la api de ibm de visual recognition, para hacer el cambio se debe modificar la linea 23 de public/js/upload.js por:
