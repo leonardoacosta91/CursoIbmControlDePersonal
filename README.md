@@ -53,6 +53,7 @@ A partir de esta información el sistema generará:
   
   ● Medición de la “felicidad” de los empleados y predecir en base a esto su desempeño y si permanecerá en la empresa o está pensando en cambiar de trabajo.
 
+Para Atacar todos estos puntos la version inicial contara con un ambiente de Front-End y Back-End gestionado por Node.js que el mismo se encargara tanto de cargar imagenes como realizar la conexion a otros servicios en la nube de Watson Studio, a su vez para realizar la parte de prediccion, contamos con un servidor Flask el cual tiene nuestro modelo entrenado utilizando Keras para generar la prediccion correspondiente y el envio del resultado al Back-End Node.js que interpretara el resultado y lo mostrara en pantalla
 
 # Descripcion del modelo de Machine/Deep Learning a utilizar
 La arquitectura del modelo seran Redes Neuronales Convolucionales debido a que son las que mejor se adaptan al problema de identificacion de usuarios.
@@ -64,6 +65,72 @@ Para poner en funcionamiento esto se utilizó un servidor de Flask el cual carga
 
 # Descripción de la organización del equipo con respecto a la metodología IBM Garage 
 (Herramientas a utilizar, definición de roles, ciclos de desarrollo, servicios en la nube a utilizar, procesos de iteración a realizar).
+
+# Metodologia utilizada
+
+Con el fin de encontrar qué metodologías se aplicaban para el desarrollo de estas soluciones, debido a que es una tendencia nueva y que las implementaciones están pocos documentados tomamos IBM Garage la cual es una metodología que actualmente se establece en el mercado como una metodología sólida y que permite la creación de prototipos la cual es una tendencia que ayuda a validar constantemente.
+
+IBM Garage permite crear innovaciones de alto impacto y centradas en el cliente. IBM Garage crea equipos diversificados y capacitados, que colaboran para aplicar tecnologías apropiadas para que crear y ampliar rápidamente ideas nuevas e innovadoras que puedan hacer que las organizaciones evolucionen de forma drástica hacia su próximo nivel.
+
+Esta metodología selecciona las mejores prácticas de la industria. Al combinar eso con las personas adecuadas y el ecosistema, con datos útiles, tecnología aplicada y espacios intencionados, IBM Garage permite impulsar un cambio transformacional sin precedentes.
+
+Abarca todos los servicios e infraestructura de nube, y aplica tanto en nuevas aplicaciones nativas, como en aplicaciones que se mueven a la nube, o que se transforman para adaptarlas a la nueva realidad.
+
+![Metodologia](https://user-images.githubusercontent.com/30410928/70398845-fe2cf180-19fd-11ea-88a0-e9d54119338f.png)
+
+Cultura: Equipos autónomos empoderados, filosofía “fallar rápido”
+
+Descubrir: Entender el problema, objetivos comunes, identificar obstáculos y cuellos de botella.
+
+Visualizar: Definir MVPs iterativos Desarrollar: Guiado por testeo, colaborativamente, CI/CD y testeo automático, construido para administrarlo en la nube.
+
+Inteligencia Artificial: arquitectura para IA, aprovechándola inmersa en procesos de negocio
+
+Operar: Pensando en las nuevas arquitecturas, su monitoreo, HA, recuperación, resolución de problemas.
+
+Aprender: testear hipótesis (en producción) con mediciones claras y feedback continuo de usuario.
+
+### Design Thinking
+Es un proceso iterativo en el que buscamos comprender al usuario, (“human center design”) cuestionar las suposiciones y redefinir los problemas en un intento de identificar estrategias y soluciones alternativas que podrían no ser evidentes instantáneamente con nuestro nivel inicial de comprensión.
+
+![design thinking](https://user-images.githubusercontent.com/30410928/70398859-3df3d900-19fe-11ea-872e-5aaaac504b4d.png)
+
+Al mismo tiempo, Design Thinking proporciona un enfoque basado en soluciones para resolver problemas. Es una forma de pensar y trabajar, así como una colección de métodos prácticos.
+
+Gira en torno a un profundo interés en desarrollar una comprensión de las personas para quienes diseñamos los productos o servicios. Nos ayuda a observar y desarrollar empatía con el usuario objetivo.
+
+Nos ayuda en el proceso de cuestionamiento: cuestionar el problema, cuestionar los supuestos y cuestionar las implicaciones.
+
+Es extremadamente útil para abordar problemas mal definidos o desconocidos, reformulando el problema de forma centrada en el ser humano, creando muchas ideas en sesiones de lluvia de ideas y adoptando un enfoque práctico en la creación de prototipos y pruebas.
+
+También implica una experimentación continua: esbozar, crear prototipos, probar y probar conceptos e ideas.
+
+Luego de realizar el taller de Design Thinking, el equipo definió su MVP: Construir una aplicación web que permita la detección del ingreso y su posterior salida de personas a una organización utilizando reconocimiento facial. La detección del ingreso y salida será simulada mediante la subida de fotos y el sistema deberá permitir consultar en línea si dichas personas se encuentran presentes, ya se fueron o si no han llegado aún. Además, se pueda acceder a dicha información desde un chat.
+
+### Arquitectura del modelo
+
+Se realizó una búsqueda literaria en donde se esperaban encontrar arquitecturas de referencia para la implementación de estas tecnologías, en este proceso se encontró la arquitectura propuesta por IBM que se describe a continuación:
+
+![prototipoibm](https://user-images.githubusercontent.com/30410928/70398885-7a273980-19fe-11ea-9388-f25c9665b8a3.png)
+
+Componentes de la arquitectura de referencia
+•	Interface: Consiste en las plataformas por las cuales se va a comunicar los usuarios con el bot, estas plataformas son generalmente plataformas de chat como Whatsapp o Facebook messenger.
+
+•	Application: Es la tecnología que se encargará de procesar las solicitudes del componente interface, generalmente es una aplicativo desarrollado en algún lenguaje como Python, JavaScript, Java, y se las enviará a la IA de IBM utilizando la API expuesta https://cloud.ibm.com/apidocs/assistant .
+
+•	Conversation Service: Es el componente encargado de procesar el lenguaje natural, el entrenamiento se hace utilizando los servicios de IBM, es totalmente gráfico y el entrenamiento es instantáneo
+
+•	Backend Systems: Son los servicios que complementan al sistema, generalmente son servicios externos.
+
+•	Other Watson services: Es un componente adicional el cual permite integrar servicios como reconocimiento y procesamiento de imágenes, esto para agregar más funcionalidades.
+
+A medida que se avanzó en el proyecto y luego de realizar diferentes pruebas de concepto se estableció la siguiente arquitectura que se describe a continuación:
+
+![arquitectura](https://user-images.githubusercontent.com/30410928/70398934-d68a5900-19fe-11ea-85f7-5e4877f2fe84.png)
+
+Componentes de la arquitectura de final
+•	Interface: Consiste en las plataformas por las cuales se va a comunicar los usuarios con el bot, estas plataformas son generalmente plataformas de chat como Whatsapp o Facebook messenger.
+•	Falta agregar los otros componentes.
 
 ### Herramientas a utilizar
 -Slack como plataforma de comunicación
