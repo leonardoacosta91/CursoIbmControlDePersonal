@@ -166,6 +166,9 @@ A continuación se desarrollo una metodología ágil, basada en 2 sprints de 2 s
 -Cloud Foundry
 -IBM Watson
 
+Se implemento un sistema de entrega continua para el frontend de nodejs alojado en la nube de ibm
+http://smartia.mybluemix.net
+
 ### Procesos de iteracion realizados
 - Obtener las fuentes de informacion (imagenes) necesarias
 - Exploracion y preprocesado de imagenes
@@ -188,6 +191,14 @@ Prerequisitos:
 - Ingresar al ambiente virtual con "env\Scripts\activate"
 - Ingresar el comando "pip install -r requirements.txt" el cual instalara las dependencias necesarias para ejecutar el servidor Flask
 - Para iniciar el servidor basta con ejecutar en el virtualenv "python run.app"
+
+# ibm visual recognition vs tensorflow
+esta aplicacion puede correr contra el modelo en tf o contra la api de ibm de visual recognition, para hacer el cambio se debe modificar la linea 23 de public/js/upload.js por:
+const remoteApi = "http://smartia.mybluemix.net/api/v1/inputData";
+
+modelo tf:
+const remoteApi = "http://localhost:8080/predict";
+
 
 # uso
 Una vez corriendo ambos servidores ingresar a http://localhost:3000 (servidor Node FRONTEND)
