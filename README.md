@@ -5,11 +5,8 @@ https://github.com/leonardoacosta91/CursoIbmControlDePersonal.git
 
 # Conformación del equipo ya definida. 
 Equipo:
-
   ● Nicolás Quagliata
-  
   ● Leonardo Acosta
-  
   ● Ricardo Aguerre
 
 # Resumen
@@ -113,14 +110,16 @@ Se realizó una búsqueda literaria en donde se esperaban encontrar arquitectura
 
 ![prototipoibm](https://user-images.githubusercontent.com/30410928/70398885-7a273980-19fe-11ea-9388-f25c9665b8a3.png)
 
-Componentes de la arquitectura de referencia
+Componentes de la arquitectura
 •	Interface: Consiste en las plataformas por las cuales se va a comunicar los usuarios con el bot, estas plataformas son generalmente plataformas de chat como Whatsapp o Facebook messenger.
 
-•	Application: Es la tecnología que se encargará de procesar las solicitudes del componente interface, generalmente es una aplicativo desarrollado en algún lenguaje como Python, JavaScript, Java, y se las enviará a la IA de IBM utilizando la API expuesta https://cloud.ibm.com/apidocs/assistant .
+•	FRONTEND: Es la tecnología que se encargará de procesar las solicitudes del componente interface, nuestra solucion es un servidor NodeJS que se encarga de recibir las solicitudes y procesarlas contra la IA de IBM utilizando la API y contra el modelo de ML utilizado como backend.
 
 •	Conversation Service: Es el componente encargado de procesar el lenguaje natural, el entrenamiento se hace utilizando los servicios de IBM, es totalmente gráfico y el entrenamiento es instantáneo
 
-•	Backend Systems: Son los servicios que complementan al sistema, generalmente son servicios externos.
+•	BACKEND: Es donde corre nuestro modelo de ML y recibe a traves de su api peticiones de reconocimiento de imagenes. Desarrollado en Flask (Python).
+
+• DB: Encargada de almacenar los registros. Se implemento en mongoDB 
 
 •	Other Watson services: Es un componente adicional el cual permite integrar servicios como reconocimiento y procesamiento de imágenes, esto para agregar más funcionalidades.
 
@@ -128,12 +127,8 @@ A medida que se avanzó en el proyecto y luego de realizar diferentes pruebas de
 
 ![arquitectura](https://user-images.githubusercontent.com/30410928/70398934-d68a5900-19fe-11ea-85f7-5e4877f2fe84.png)
 
-Componentes de la arquitectura de final
 
-•	Interface: Consiste en las plataformas por las cuales se va a comunicar los usuarios con el bot, estas plataformas son generalmente plataformas de chat como Whatsapp o Facebook messenger.
-•	Falta agregar los otros componentes.
-
-### Herramientas a utilizar
+### Herramientas utilizadas
 -Slack como plataforma de comunicación
 
 -Trello para organizar el proyecto
@@ -164,16 +159,14 @@ Ricardo Aguerre
 
 ### Ciclos de desarrollo
 Primer ciclo de definición del problema y enfoque de la solución en el usuario. Determinar los puntos claves que agreguenvalor al producto.
-A continuación se propone una metodología ágil, basada en 2 sprints de 2 semanas de duración y 2 de 1 semana
+A continuación se desarrollo una metodología ágil, basada en 2 sprints de 2 semanas de duración y 2 de 1 semana
 
-### Servicios en la nube a utilizar
+### Servicios en la nube utilizados
 -IBM Cloud
-
 -Cloud Foundry
-
 -IBM Watson
 
-### Procesos de iteracion a realizar
+### Procesos de iteracion realizados
 - Obtener las fuentes de informacion (imagenes) necesarias
 - Exploracion y preprocesado de imagenes
 - Construccion de modelo predictivo
@@ -195,3 +188,27 @@ Prerequisitos:
 - Ingresar al ambiente virtual con "env\Scripts\activate"
 - Ingresar el comando "pip install -r requirements.txt" el cual instalara las dependencias necesarias para ejecutar el servidor Flask
 - Para iniciar el servidor basta con ejecutar en el virtualenv "python run.app"
+
+# uso
+Una vez corriendo ambos servidores ingresar a http://localhost:3000 (servidor Node FRONTEND)
+El menu presenta 4 opciones:
+- Camara de entrada
+Esta pagina emula el dispositivo de carga de las imagenes de entrada y se conecta a una api que envia la cara al modelo de IA, este devuelve el nombre y posteriormente se guarda el registro en la BD.
+- Camara de salida
+Esta pagina emula el dispositivo de carga de las imagenes de salida y se conecta a una api que envia la cara al modelo de IA, este devuelve el nombre y posteriormente se guarda el registro en la BD.
+- Registros
+Esta pagina devuelve los registros generados en la BD.
+- Usuarios activos hoy
+Como muestra de las funcionalidades se presenta un listado del estado de los empleados en la oficina (aun no llegaron, actualmente en la oficina y ya se fueron).
+
+Adicionalmente se incorpora un webchat al cual se le pueden consultar los empleados que estan activos y los que no. El procedimiento es el siguiente:
+SECUENCIA 1
+Pregunta: Que personas están presentes?
+Respuesta: Favor indica a quien estas buscando?
+Pregunta: (Nicolás, Ricardo o Leonardo)
+Respuesta: estado
+SECUENCIA 2
+Pregunta: Hoy vino?
+Respuesta: Quién?
+Pregunta: (Nicolás, Ricardo o Leonardo)
+Respuesta: estado
