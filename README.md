@@ -129,6 +129,7 @@ A medida que se avanzó en el proyecto y luego de realizar diferentes pruebas de
 ![arquitectura](https://user-images.githubusercontent.com/30410928/70398934-d68a5900-19fe-11ea-85f7-5e4877f2fe84.png)
 
 Componentes de la arquitectura de final
+
 •	Interface: Consiste en las plataformas por las cuales se va a comunicar los usuarios con el bot, estas plataformas son generalmente plataformas de chat como Whatsapp o Facebook messenger.
 •	Falta agregar los otros componentes.
 
