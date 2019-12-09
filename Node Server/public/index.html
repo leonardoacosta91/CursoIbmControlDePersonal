@@ -10,21 +10,32 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">    
 </head>
 <body>
-    <div class=".col-md-">
-        <div id="head"></div>
+    <div class="container">
+        <h1 id="title"></h1>
+        <h2 id="subtitle"></h2>
 
-        <script src=https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js> </script> <script>
-            window.loadWatsonAssistantChat({
-                //integrationID: "ac58c247-1eba-42ad-b9c2-33ee309ea630",
-                integrationID: "ceba1439-b6da-4975-b962-1dc5d53a435d",
-                region: "us-south"
-            }).then(function (instance) {
-                instance.render();
-            });
-        </script>
-        
-        <div id="app"></div>
+        <div id="menu"></div>
+
     </div>
-    <script src="/js/bundle.js"></script>
+
+    <script src="/js/upload.js"></script>
+
+    <script src="/js/upload.js"></script>
+
+    <script src=https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js> </script> <script>
+      window.loadWatsonAssistantChat({
+          //integrationID: "ac58c247-1eba-42ad-b9c2-33ee309ea630",
+          integrationID: "ceba1439-b6da-4975-b962-1dc5d53a435d",
+          region: "us-south"
+      }).then(function (instance) {
+          instance.render();
+      });
+  </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -7,10 +7,7 @@ new Vue({
     render: h => h(Head)
 }).$mount('#head');
 
-new Vue({
+/* new Vue({
     render: h => h(App)
-}).$mount('#app');
+}).$mount('#app'); */
 
-new Vue({
-    render: h => h(SimpleUpload)
-}).$mount('#simpleUpload');

@@ -126,6 +126,7 @@ function listActiveUsers() {
     //date = date.getFullYear()+'-'+date.getMonth() + 1).padStart(2, '0')+'-'+date.getDate();
     console.log(date);
     console.log('listing active users');
+    console.log(workers);
     fetch('/api/v1/db/findByDate/'+date, {
         method: 'get'
     })
@@ -138,17 +139,23 @@ function listActiveUsers() {
             <div class="alert alert-info">Archivos correspondientes al ${date}</div>
         `;
 
+        console.log(response);
+
         
             let usersArrived = [];
             let usersLeft = [];
 
         for (var i = 0; i < response.length; i++) {
+            console.log(i);
             for (var j=0; j < workers.length; j++){
                 if (response[i].name == workers[j]){
+                    console.log('match --> ', response[i].name, ' -- ', workers[j], ' source:', response[i].source);
                     if(response[i].source=='exitCam'){
+                        console.log('exit');
                         usersLeft[j] = true;
                     } else {
                         usersArrived[j] = true;
+                        console.log('access');
                     }
                 }
                 //console.log(activeUsers[j])

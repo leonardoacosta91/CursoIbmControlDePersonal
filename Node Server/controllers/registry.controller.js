@@ -52,7 +52,7 @@ exports.checkStatus = (req, res) => {
     
     .then(response => {
         //console.log(registry);
-        const workers = ['Ashton Kutcher', 'Adam Sandler', 'Adele', 'bella thorne'];
+        const workers = ['Leonardo', 'Nicolas', 'Ricardo'];
         let userStatus = 0;
         let usersArrived = [];
         let usersLeft = [];
@@ -100,13 +100,19 @@ exports.findAll = (req, res) => {
 
 // Retrieve and return all registries at a specific date.
 exports.findByDate = (req, res) => {
-    
-    
-    let date = new Date(req.params.date);
-    var testDate = new Date(date);
-    testDate.setDate (testDate.getDate()+1);
+    let receivedDate = req.params.date;
+    console.log(receivedDate);
+    let today = new Date(receivedDate);
+    today.setHours (today.getHours()+3);
+    //today.setHours(0);
+    //today.setMinutes(0);
+    let tomorrow = new Date(today);
+    tomorrow.setDate (tomorrow.getDate()+1);
 
-    Registry.find({ createdAt: { $gte: date, $lt: testDate }})
+    console.log(today);
+    console.log(tomorrow);
+
+    Registry.find({ createdAt: { $gte: today, $lt: tomorrow }})
     .then(registry => {
         res.send(registry);
     }).catch(err => {
@@ -176,24 +182,24 @@ exports.checkIfIsAtTheOffice = (req, res) => {
     today.setHours(0);
     today.setMinutes(0);
     let tomorrow = new Date(today);
-    tomorrow.setDate (tomorrow.getDate()+1);
+    tomorrow.setDate(tomorrow.getDate() + 1);
 
     console.log(today);
     console.log(tomorrow);
 
-    Registry.find({ createdAt: { $gte: today, $lt: tomorrow }})
-    
+    Registry.find({ createdAt: { $gte: today, $lt: tomorrow } })
+
     .then(response => {
         //console.log(registry);
-        const workers = ['Ashton Kutcher', 'Adam Sandler', 'Adele', 'bella thorne'];
+        const workers = ['Ashton Kutcher', 'Adam Sandler', 'Adele', 'bella thorne','Leonardo', 'Nicolas', 'Ricardo'];
         let userStatus = 0;
         let usersArrived = [];
         let usersLeft = [];
-        
+
         for (var i = 0; i < response.length; i++) {
-            for (var j=0; j < workers.length; j++){
-                if (response[i].name == workers[j]){
-                    if(response[i].source=='exitCam'){
+            for (var j = 0; j < workers.length; j++) {
+                if (response[i].name == workers[j]) {
+                    if (response[i].source == 'exitCam') {
                         usersLeft[j] = true;
                     } else {
                         usersArrived[j] = true;
@@ -204,20 +210,20 @@ exports.checkIfIsAtTheOffice = (req, res) => {
             //let registryDate = new Date(response[i].createdAt);              
         }
 
-        if (usersArrived[code] == true){
-            if(usersLeft[code] == true){
+        if (usersArrived[code] == true) {
+            if (usersLeft[code] == true) {
                 userStatus = 2;
             } else {
                 userStatus = 1;
             }
-        } 
-        res.send({'userStatus': userStatus});
+        }
+        res.send({ 'userStatus': userStatus });
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving registries."
         });
     });
-    
+
 
 };
 
