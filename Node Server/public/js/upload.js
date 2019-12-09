@@ -218,10 +218,10 @@ function renderMenu(menuItems){
     var nav = document.createElement('nav');
     nav.setAttribute('class', 'navbar navbar-expand-lg navbar-light bg-light');
 
-    var brand = document.createElement('a');
-    brand.setAttribute('class', 'navbar-brand');
-    brand.appendChild(document.createTextNode('smartIA'));
-    nav.appendChild(brand);
+    //var brand = document.createElement('a');
+    //brand.setAttribute('class', 'navbar-brand');
+    //brand.appendChild(document.createTextNode('smartIA'));
+    //nav.appendChild(brand);
 
     
     var divNavMenu = document.createElement('div');
