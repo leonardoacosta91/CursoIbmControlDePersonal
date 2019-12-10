@@ -113,11 +113,13 @@ Se realizó una búsqueda literaria en donde se esperaban encontrar arquitectura
 Componentes de la arquitectura
 •	Interface: Consiste en las plataformas por las cuales se va a comunicar los usuarios con el bot, estas plataformas son generalmente plataformas de chat como Whatsapp o Facebook messenger.
 
-•	FRONTEND: Es la tecnología que se encargará de procesar las solicitudes del componente interface, nuestra solucion es un servidor NodeJS que se encarga de recibir las solicitudes y procesarlas contra la IA de IBM utilizando la API y contra el modelo de ML utilizado como backend.
+•	FRONTEND: Es la tecnología que se encargará de procesar las solicitudes del componente interface, nuestra solucion tambien cuenta con un servidor NodeJS que se encarga de recibir las solicitudes y procesarlas contra la IA de IBM utilizando la API y contra el modelo de ML en Flask.
+
+• BACKEND: Es el encargado de conectar los demas componentes del sistema como ser los servicios de Watson, el microservicio y la base de datos MongoDB.
 
 •	Conversation Service: Es el componente encargado de procesar el lenguaje natural, el entrenamiento se hace utilizando los servicios de IBM, es totalmente gráfico y el entrenamiento es instantáneo
 
-•	BACKEND: Es donde corre nuestro modelo de ML y recibe a traves de su api peticiones de reconocimiento de imagenes. Desarrollado en Flask (Python).
+•	Microservicio de Flask: Es donde corre nuestro modelo de ML y recibe a traves de su api peticiones de reconocimiento de imagenes. Desarrollado en Flask (Python).
 
 • DB: Encargada de almacenar los registros. Se implemento en mongoDB 
 
